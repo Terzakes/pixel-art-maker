@@ -39,7 +39,7 @@ function eventListeners () {
   var aside = document.getElementById('colors');
   var div = section.getElementsByTagName('div')
   var newColor;
-  var mousePosition = false;
+  var mouseDown = false;
   section.addEventListener('click', function () {
     for (let i = 0; i < div.length; i++) {
       if (event.target == div[i]) {
@@ -50,14 +50,8 @@ function eventListeners () {
 
   aside.addEventListener('click', function () {
     if (event.target.className === 'color6') {
-      var colorPicker = document.getElementsByTagName('input');
-      var colorPickerDiv = aside.getElementsByClassName('color6')[0].style;
-
-      newColor = colorPicker[0].value;
-      colorPickerDiv.backgroundColor = newColor;
-      console.log(colorPickerDiv);
-      console.log(newColor);
-      console.log(aside.getElementsByClassName('color6')[0].style);
+      newColor = document.getElementsByTagName('input')[0].value;
+      aside.getElementsByClassName('color6')[0].style.backgroundColor = newColor;
     } else {
       newColor = event.target.style.backgroundColor;
       console.log(event.target.style.backgroundColor);
@@ -65,20 +59,20 @@ function eventListeners () {
   });
 
   section.addEventListener('mousedown', function () {
-    mousePosition = true;
+    mouseDown = true;
   });
 
   section.addEventListener('mouseup', function () {
-    mousePosition = false;
+    mouseDown = false;
   });
 
   section.addEventListener('mouseleave', function () {
-    mousePosition = false;
+    mouseDown = false;
   });
 
 
   section.addEventListener('mouseover', function () {
-    if (mousePosition) {
+    if (mouseDown) {
       event.target.style.backgroundColor = newColor;
       event.stopPropagation();
     }
@@ -86,6 +80,7 @@ function eventListeners () {
 
 
 }
+
 
 
 eventListeners();

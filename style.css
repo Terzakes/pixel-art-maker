@@ -10,7 +10,7 @@ section > div {
   width: 750px;
   height: 750px;
   clear: both;
-  background: white;
+  background-color: white;
 }
 #colors {
   width: 750px;
@@ -26,36 +26,32 @@ aside > div {
   float: left;
 }
 
+/*
 .color0 {
   background: red;
-  /*border: 1px solid red;*/
 }
 
 .color1 {
   background: orange;
-  /*border: 1px solid orange;*/
 }
 
 .color2 {
   background: yellow;
-  /*border: 1px solid yellow;*/
 }
 
 .color3 {
   background: green;
-  /*border: 1px solid green;*/
 }
 
 .color4 {
   background: blue;
-  /*border: 1px solid blue;*/
 }
 
 .color5 {
   background: purple;
-  /*border: 1px solid purple;*/
 }
 
 .color6 {
-  /* color picker */
 }
+
+*/

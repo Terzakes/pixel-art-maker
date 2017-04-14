@@ -14,11 +14,13 @@ function createGrid () {
 }
 function createColors () {
   var aside = document.createElement('aside');
+  var colorChoice = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
   var numberOfColors = 7  ;
   aside.id = 'colors';
   for (var i = 0; i < numberOfColors; i++) {
       var div = document.createElement('div');
-      div.className =  'color' + i;
+      div.style.backgroundColor =  colorChoice[i];
+      div.className = 'color' + i;
       aside.appendChild(div);
   }
   document.body.appendChild(aside);
@@ -35,19 +37,32 @@ createColors();
 function eventListeners () {
   var section = document.getElementById('grid');
   var aside = document.getElementById('colors');
-  // var div = section.getElementsByTagName('div')
+  var div = section.getElementsByTagName('div')
   var newColor;
   var mousePosition = false;
-
   section.addEventListener('click', function () {
-    event.target.className = newColor;
+    for (let i = 0; i < div.length; i++) {
+      if (event.target == div[i]) {
+        event.target.style.backgroundColor = newColor;
+      }
+  }
   });
 
   aside.addEventListener('click', function () {
-    var chosen = event.target;
-    newColor = event.target.className;
-    document.querySelector(event.target.className)
-  })
+    if (event.target.className === 'color6') {
+      var colorPicker = document.getElementsByTagName('input');
+      var colorPickerDiv = aside.getElementsByClassName('color6')[0].style;
+
+      newColor = colorPicker[0].value;
+      colorPickerDiv.backgroundColor = newColor;
+      console.log(colorPickerDiv);
+      console.log(newColor);
+      console.log(aside.getElementsByClassName('color6')[0].style);
+    } else {
+      newColor = event.target.style.backgroundColor;
+      console.log(event.target.style.backgroundColor);
+    }
+  });
 
   section.addEventListener('mousedown', function () {
     mousePosition = true;
@@ -57,9 +72,15 @@ function eventListeners () {
     mousePosition = false;
   });
 
+  section.addEventListener('mouseleave', function () {
+    mousePosition = false;
+  });
+
+
   section.addEventListener('mouseover', function () {
     if (mousePosition) {
-      event.target.className = newColor;
+      event.target.style.backgroundColor = newColor;
+      event.stopPropagation();
     }
   });
 

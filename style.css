@@ -1,0 +1,60 @@
+section > div {
+  width: 15px;
+  height: 15px;
+  border: 1px dotted gray;
+  float: left;
+  box-sizing: border-box;
+}
+
+#grid {
+  width: 750px;
+  height: 750px;
+  clear: both;
+}
+#colors {
+  width: 750px;
+  height: 100px;
+  padding: 0 0 0 15px;
+}
+aside > div {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 100%;
+  margin: 20px 20px;
+  float: left;
+}
+
+.color0 {
+  background: red;
+  /*border: 1px solid red;*/
+}
+
+.color1 {
+  background: orange;
+  /*border: 1px solid orange;*/
+}
+
+.color2 {
+  background: yellow;
+  /*border: 1px solid yellow;*/
+}
+
+.color3 {
+  background: green;
+  /*border: 1px solid green;*/
+}
+
+.color4 {
+  background: blue;
+  /*border: 1px solid blue;*/
+}
+
+.color5 {
+  background: purple;
+  /*border: 1px solid purple;*/
+}
+
+.color6 {
+  /* color picker */
+}

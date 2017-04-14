@@ -10,6 +10,7 @@ section > div {
   width: 750px;
   height: 750px;
   clear: both;
+  background: white;
 }
 #colors {
   width: 750px;

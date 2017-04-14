@@ -12,7 +12,6 @@ function createGrid () {
   }
   document.body.appendChild(section);
 }
-
 function createColors () {
   var aside = document.createElement('aside');
   var numberOfColors = 7  ;
@@ -36,12 +35,12 @@ createColors();
 function eventListeners () {
   var section = document.getElementById('grid');
   var aside = document.getElementById('colors');
-  var div = document.getElementsByClassName('pixel');
+  // var div = section.getElementsByTagName('div')
   var newColor;
+  var mousePosition = false;
 
   section.addEventListener('click', function () {
     event.target.className = newColor;
-    console.log(event.target)
   });
 
   aside.addEventListener('click', function () {
@@ -49,5 +48,23 @@ function eventListeners () {
     newColor = event.target.className;
     document.querySelector(event.target.className)
   })
+
+  section.addEventListener('mousedown', function () {
+    mousePosition = true;
+  });
+
+  section.addEventListener('mouseup', function () {
+    mousePosition = false;
+  });
+
+  section.addEventListener('mouseover', function () {
+    if (mousePosition) {
+      event.target.className = newColor;
+    }
+  });
+
+
 }
+
+
 eventListeners();

@@ -14,7 +14,7 @@ function createGrid () {
 }
 function createColors () {
   var aside = document.createElement('aside');
-  var colorChoice = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+  var colorChoice = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
   var numberOfColors = 7  ;
   aside.id = 'colors';
   for (var i = 0; i < numberOfColors; i++) {
@@ -37,7 +37,7 @@ createColors();
 function eventListeners () {
   var section = document.getElementById('grid');
   var aside = document.getElementById('colors');
-  var div = section.getElementsByTagName('div')
+  var div = section.getElementsByTagName('div');
   var newColor;
   var mouseDown = false;
   section.addEventListener('click', function () {
@@ -84,3 +84,17 @@ function eventListeners () {
 
 
 eventListeners();
+
+//
+// reset button
+//
+
+// function reset () {
+//   var button = document.getElementById('reset');
+//   console.log(button);
+//   // button.addEventListener('click', function () {
+//   //   var answer = confirm('Are you sure you want to clear your work?');
+//   //
+//   // });
+// }
+// reset();
